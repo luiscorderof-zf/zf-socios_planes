@@ -1,4 +1,4 @@
-<?php function Page_Login($swLogin) { ?>
+<?php function page_Login($swLogin) { ?>
 <!doctype html>
 <html lang="es">
 <head>

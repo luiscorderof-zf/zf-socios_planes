@@ -11,10 +11,13 @@ $_SESSION["zf-token"]    = isset($_SESSION["zf-token"]) ? $_SESSION["zf-token"] 
 $_SESSION["zf-intentmax"]= isset($_SESSION["zf-intentmax"]) ? $_SESSION["zf-intentmax"] : $objSesion->ZF_IntentMax;
 
 $_SESSION["zf-intentos"] = $_SESSION["zf-intentos"]+ 1;
-$sw_Login = true;
 // print "Intentos : " . $_SESSION["zf-intentos"];
 
+// include './Login/Login-HEAD-HTML.php';
+// $_SERVER;
 /*
+echo "ZF-Test : " . $_SESSION['zf_test'] . "<br/>";
+echo "ZF-Carga : " . $_SESSION['zf_carga'];
 isset($_POST["zf-email"]) ? print $_POST["zf-email"] : "";
 isset($_POST["zf-password"]) ? print $_POST["zf-password"] : "";
 $_SESSION['zf_carga'] = isset($_SESSION['zf_carga']) ? $_SESSION['zf_carga'] : 1;
@@ -98,7 +101,7 @@ echo "Peter2 : " . $obj[0]->Peter . "<br />";
 ]
 */
 $_SESSION['data'] = json_decode(file_get_contents('http://191.101.78.67:8080/api/v1/estado/'));
-var_dump($_SESSION['data']);
+// var_dump($_SESSION['data']);
 // print $_SESSION['data'][0]->estado_Abrevia;
 /*
 {
@@ -144,10 +147,8 @@ else
 if($_SESSION["zf-intentos"] > $_SESSION["zf-intentmax"]) {
     $_SESSION["zf-intentos"] = $_SESSION["zf-intentmax"];
     include './login-bloqueado.php';
-    $sw_Login = false;
-}
-if($sw_Login) {
+} else {
   include './login.php';
 }
-page_Login($swHidde);
+Page_Login($swHidde);
 ?>

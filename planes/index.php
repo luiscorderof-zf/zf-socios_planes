@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
 session_start();
-
+// PLANES.PHP
 $zf_Sesion = '{"ZF_Cuenta": "", "ZF_HoraLimite": null, "ZF_HoraIngreso": null, "ZF_Intentos": 0, "ZF_IntentMax": 5, "ZF_Token": null}';
 $objSesion = json_decode($zf_Sesion);
 
@@ -10,7 +10,7 @@ $_SESSION["zf-intentos"] = isset($_SESSION["zf-intentos"]) ? $_SESSION["zf-inten
 $_SESSION["zf-token"]    = isset($_SESSION["zf-token"]) ? $_SESSION["zf-token"] : $objSesion->ZF_Token;
 $_SESSION["zf-intentmax"]= isset($_SESSION["zf-intentmax"]) ? $_SESSION["zf-intentmax"] : $objSesion->ZF_IntentMax;
 
-$_SESSION["zf-intentos"] = $_SESSION["zf-intentos"]+ 1;
+// $_SESSION["zf-intentos"] = $_SESSION["zf-intentos"]+ 1;
 // print "Intentos : " . $_SESSION["zf-intentos"];
 
 // include './Login/Login-HEAD-HTML.php';

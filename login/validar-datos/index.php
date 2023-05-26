@@ -1,4 +1,5 @@
 <?php 
+error_reporting(0);
 session_start();
 
 $_SERVER;
@@ -7,8 +8,9 @@ echo "ZF-Carga : " . $_SESSION['zf_carga'];
 isset($_POST["zf-email"]) ? print $_POST["zf-email"] : "";
 isset($_POST["zf-password"]) ? print $_POST["zf-password"] : "";
 $_SESSION['zf_carga'] = isset($_SESSION['zf_carga']) ? $_SESSION['zf_carga'] : 1;
-$_SESSION['zf_test'] = "Key-Cargado (" . $_SESSION['zf_carga'] . ")";
+$_SESSION['zf_test']  = "Key-Cargado (" . $_SESSION['zf_carga'] . ")";
 $_SESSION['zf_carga'] = $_SESSION['zf_carga']+ 1;
+$_SESSION["zf-token"] = "12-134-67909-3465";
 // print_r($GLOBALS);
 // print_r($GLOBALS['zf_test']);
 ?>
